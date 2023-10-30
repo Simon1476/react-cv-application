@@ -1,0 +1,16 @@
+.experience {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    text-align: left;
+  }
+
+  .dates-group {
+    display: flex;
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
