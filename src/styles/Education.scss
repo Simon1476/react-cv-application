@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
 
+  h3 {
+    margin: 0;
+    text-align: left;
+  }
   label {
     text-align: left;
   }

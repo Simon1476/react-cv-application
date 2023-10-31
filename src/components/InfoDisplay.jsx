@@ -5,20 +5,20 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/InfoDisplay.scss";
-const InfoDisplay = ({ person }) => {
-  console.log(person);
+const InfoDisplay = ({ personInfo }) => {
   return (
     <div className="info-display">
-      <h1>{person.name}</h1>
+      <h1>{personInfo.name}</h1>
       <ul>
         <li>
-          <FontAwesomeIcon icon={faEnvelope} /> <span>{person.email}</span>
+          <FontAwesomeIcon icon={faEnvelope} /> <span>{personInfo.email}</span>
         </li>
         <li>
-          <FontAwesomeIcon icon={faPhone} /> <span>{person.phone}</span>
+          <FontAwesomeIcon icon={faPhone} /> <span>{personInfo.phone}</span>
         </li>
         <li>
-          <FontAwesomeIcon icon={faLocationDot} /> <span>{person.address}</span>
+          <FontAwesomeIcon icon={faLocationDot} />
+          <span>{personInfo.address}</span>
         </li>
       </ul>
     </div>

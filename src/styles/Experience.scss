@@ -1,7 +1,13 @@
 .experience {
   display: flex;
   flex-direction: column;
+  max-width: 1500px;
 
+  h3 {
+    margin: 0;
+    text-align: left;
+  }
+  
   label {
     text-align: left;
   }

@@ -3,13 +3,29 @@ import Education from "./Education";
 import ControlBtn from "./ControlBtn";
 import Experience from "./Experience";
 
-const ResumeBuilder = ({ person, handlePersonChange }) => {
+const ResumeBuilder = ({
+  personInfo,
+  handlePersonChange,
+  educationInfo,
+  handleEducationChange,
+  experienceInfo,
+  handleExperienceChange,
+}) => {
   return (
     <div>
       <ControlBtn />
-      <PersonalInfo person={person} handlePersonChange={handlePersonChange} />
-      <Education />
-      <Experience />
+      <PersonalInfo
+        personInfo={personInfo}
+        handlePersonChange={handlePersonChange}
+      />
+      <Education
+        educationInfo={educationInfo}
+        handleEducationChange={handleEducationChange}
+      />
+      <Experience
+        experienceInfo={experienceInfo}
+        handleExperienceChange={handleExperienceChange}
+      />
     </div>
   );
 };

@@ -3,12 +3,12 @@ import InfoDisplay from "./InfoDisplay";
 import EduDisplay from "./EduDisplay";
 import ExpDisplay from "./ExpDisplay";
 
-const Resume = ({ person }) => {
+const Resume = ({ personInfo, educationInfo, experienceInfo }) => {
   return (
     <div className="resume">
-      <InfoDisplay person={person} />
-      <EduDisplay />
-      <ExpDisplay />
+      <InfoDisplay personInfo={personInfo} />
+      <EduDisplay educationInfo={educationInfo} />
+      <ExpDisplay experienceInfo={experienceInfo} />
     </div>
   );
 };
