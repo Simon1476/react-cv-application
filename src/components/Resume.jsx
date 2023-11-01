@@ -5,7 +5,7 @@ import ExpDisplay from "./ExpDisplay";
 
 const Resume = ({ personInfo, educationInfo, experienceInfo }) => {
   return (
-    <div className="resume">
+    <div className="resume" style={{ height: "29.7cm", width: "21cm" }}>
       <InfoDisplay personInfo={personInfo} />
       <EduDisplay educationInfo={educationInfo} />
       <ExpDisplay experienceInfo={experienceInfo} />

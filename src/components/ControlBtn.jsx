@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/Control.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan, faPrint, faEye } from "@fortawesome/free-solid-svg-icons";
@@ -6,9 +5,18 @@ import { faTrashCan, faPrint, faEye } from "@fortawesome/free-solid-svg-icons";
 const ControlBtn = () => {
   return (
     <div className="control">
-      <FontAwesomeIcon icon={faTrashCan} />
-      <FontAwesomeIcon icon={faEye} />
-      <FontAwesomeIcon icon={faPrint} />
+      <button>
+        <FontAwesomeIcon icon={faTrashCan} />
+        <span>Reset</span>
+      </button>
+      <button>
+        <FontAwesomeIcon icon={faEye} />
+        <span>Example</span>
+      </button>
+      <button>
+        <FontAwesomeIcon icon={faPrint} />
+        <span>Print</span>
+      </button>
     </div>
   );
 };

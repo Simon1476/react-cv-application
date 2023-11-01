@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faScroll } from "@fortawesome/free-solid-svg-icons";
 
 const Experience = ({ experienceInfo, handleExperienceChange }) => {
-  console.log(experienceInfo);
   return (
     <div className="experience">
       <h3>

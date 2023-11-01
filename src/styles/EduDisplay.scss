@@ -1,0 +1,21 @@
+.edu-display {
+    p {
+    margin: 0;
+  }
+
+  h3 {
+    background: #EBD9C9;
+  }
+
+  .eduInfo-list {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 30px;
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      align-items:  flex-start;
+    }
+  }
+}

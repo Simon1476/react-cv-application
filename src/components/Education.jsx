@@ -1,63 +1,32 @@
 import { useState } from "react";
 import "../styles/Education.scss";
+import EducationForm from "./EducationForm";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGraduationCap,
+  faChevronUp,
+  faChevronDown,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Education = ({ educationInfo, handleEducationChange }) => {
+  const [isExpanded, setIsExpanded] = useState(false); // Initialize the state variable
+
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded); // Toggle the state when the button is clicked
+  };
   return (
     <div className="education">
-      <h3>
-        <FontAwesomeIcon icon={faGraduationCap} />
-        Education
-      </h3>
-      <label htmlFor="school">School</label>
-      <input
-        type="text"
-        id="school"
-        name="school"
-        placeholder="Harvard"
-        value={educationInfo.school}
-        onChange={handleEducationChange}
-      />
-      <label htmlFor="degree">Degree</label>
-      <input
-        type="text"
-        id="degree"
-        name="degree"
-        placeholder="Harvard"
-        value={educationInfo.degree}
-        onChange={handleEducationChange}
-      />
-      <div className="dates-group">
-        <div>
-          <label>Start Date</label>
-          <input
-            type="text"
-            name="startDate"
-            placeholder="YYYY-MM-DD"
-            value={educationInfo.startDate}
-            onChange={handleEducationChange}
-          />
-        </div>
-        <div>
-          <label>End Date</label>
-          <input
-            type="text"
-            name="endDate"
-            placeholder="YYYY-MM-DD"
-            value={educationInfo.endDate}
-            onChange={handleEducationChange}
-          />
-        </div>
-      </div>
-      <label htmlFor="location">location</label>
-      <input
-        type="text"
-        id="location"
-        name="location"
-        placeholder="Harvard"
-        value={educationInfo.location}
-        onChange={handleEducationChange}
+      <button className="expand-btn" onClick={toggleExpand}>
+        <h3>
+          <FontAwesomeIcon icon={faGraduationCap} />
+          Education
+        </h3>
+        <FontAwesomeIcon icon={faChevronDown} />
+      </button>
+      <EducationForm
+        educationInfo={educationInfo}
+        handleEducationChange={handleEducationChange}
       />
     </div>
   );
