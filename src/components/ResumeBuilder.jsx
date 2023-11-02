@@ -8,6 +8,7 @@ const ResumeBuilder = ({
   handlePersonChange,
   educationInfo,
   handleEducationChange,
+  handleDeleteEducation,
   experienceInfo,
   handleExperienceChange,
 }) => {
@@ -21,6 +22,7 @@ const ResumeBuilder = ({
       <Education
         educationInfo={educationInfo}
         handleEducationChange={handleEducationChange}
+        handleDeleteEducation={handleDeleteEducation}
       />
       <Experience
         experienceInfo={experienceInfo}

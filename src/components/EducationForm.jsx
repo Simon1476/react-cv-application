@@ -1,13 +1,64 @@
+import { useState } from "react";
 import "../styles/EducationForm.scss";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGraduationCap,
-  faChevronUp,
-  faChevronDown,
-} from "@fortawesome/free-solid-svg-icons";
+const EducationForm = ({
+  educationInfo,
+  handleEducationChange,
+  handleDeleteEducation,
+  id,
+  toggleFormVisibility,
+}) => {
+  const [initialValues, setInitialValues] = useState(educationInfo);
 
-const EducationForm = ({ educationInfo, handleEducationChange }) => {
+  const resetForm = () => {
+    handleEducationChange(
+      {
+        target: {
+          name: "school",
+          value: initialValues.school,
+        },
+      },
+      id
+    );
+    handleEducationChange(
+      {
+        target: {
+          name: "degree",
+          value: initialValues.degree,
+        },
+      },
+      id
+    );
+    handleEducationChange(
+      {
+        target: {
+          name: "startDate",
+          value: initialValues.startDate,
+        },
+      },
+      id
+    );
+    handleEducationChange(
+      {
+        target: {
+          name: "endDate",
+          value: initialValues.endDate,
+        },
+      },
+      id
+    );
+    handleEducationChange(
+      {
+        target: {
+          name: "location",
+          value: initialValues.location,
+        },
+      },
+      id
+    );
+    toggleFormVisibility(); // Close the form
+  };
+
   return (
     <div className="education-form">
       <label htmlFor="school">School</label>
@@ -17,7 +68,9 @@ const EducationForm = ({ educationInfo, handleEducationChange }) => {
         name="school"
         placeholder="Harvard"
         value={educationInfo.school}
-        onChange={handleEducationChange}
+        onChange={(e) => {
+          handleEducationChange(e, id);
+        }}
       />
       <label htmlFor="degree">Degree</label>
       <input
@@ -26,7 +79,9 @@ const EducationForm = ({ educationInfo, handleEducationChange }) => {
         name="degree"
         placeholder="Harvard"
         value={educationInfo.degree}
-        onChange={handleEducationChange}
+        onChange={(e) => {
+          handleEducationChange(e, id);
+        }}
       />
       <div className="dates-group">
         <div>
@@ -36,7 +91,9 @@ const EducationForm = ({ educationInfo, handleEducationChange }) => {
             name="startDate"
             placeholder="YYYY-MM-DD"
             value={educationInfo.startDate}
-            onChange={handleEducationChange}
+            onChange={(e) => {
+              handleEducationChange(e, id);
+            }}
           />
         </div>
         <div>
@@ -46,7 +103,9 @@ const EducationForm = ({ educationInfo, handleEducationChange }) => {
             name="endDate"
             placeholder="YYYY-MM-DD"
             value={educationInfo.endDate}
-            onChange={handleEducationChange}
+            onChange={(e) => {
+              handleEducationChange(e, id);
+            }}
           />
         </div>
       </div>
@@ -57,13 +116,26 @@ const EducationForm = ({ educationInfo, handleEducationChange }) => {
         name="location"
         placeholder="Harvard"
         value={educationInfo.location}
-        onChange={handleEducationChange}
+        onChange={(e) => {
+          handleEducationChange(e, id);
+        }}
       />
       <div className="btns">
-        <button type="button">Delete</button>
+        <button
+          type="button"
+          onClick={() => {
+            handleDeleteEducation(id);
+          }}
+        >
+          Delete
+        </button>
         <div className="button-container">
-          <button type="button">Cancel</button>
-          <button type="button">Save</button>
+          <button type="button" onClick={resetForm}>
+            Cancel
+          </button>
+          <button type="button" onClick={toggleFormVisibility}>
+            Save
+          </button>
         </div>
       </div>
     </div>

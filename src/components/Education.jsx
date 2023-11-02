@@ -8,9 +8,14 @@ import {
   faChevronUp,
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
+import EduList from "./EduList";
 
-const Education = ({ educationInfo, handleEducationChange }) => {
-  const [isExpanded, setIsExpanded] = useState(false); // Initialize the state variable
+const Education = ({
+  educationInfo,
+  handleEducationChange,
+  handleDeleteEducation,
+}) => {
+  const [isExpanded, setIsExpanded] = useState(true); // Initialize the state variable
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded); // Toggle the state when the button is clicked
@@ -24,10 +29,16 @@ const Education = ({ educationInfo, handleEducationChange }) => {
         </h3>
         <FontAwesomeIcon icon={faChevronDown} />
       </button>
-      <EducationForm
-        educationInfo={educationInfo}
-        handleEducationChange={handleEducationChange}
-      />
+      {isExpanded &&
+        educationInfo.map((educationInfo) => (
+          <EduList
+            key={educationInfo.id}
+            educationInfo={educationInfo}
+            handleEducationChange={handleEducationChange}
+            handleDeleteEducation={handleDeleteEducation}
+            id={educationInfo.id}
+          />
+        ))}
     </div>
   );
 };
