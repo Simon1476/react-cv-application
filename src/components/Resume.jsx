@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import InfoDisplay from "./InfoDisplay";
-import EduDisplay from "./EduDisplay";
+import EduDisplay from "./education/EduDisplay";
 import ExpDisplay from "./ExpDisplay";
 
 const Resume = ({ personInfo, educationInfo, experienceInfo }) => {
