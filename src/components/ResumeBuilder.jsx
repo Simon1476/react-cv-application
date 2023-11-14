@@ -1,7 +1,7 @@
 import PersonalInfo from "./PersonalInfo";
 import Education from "./education/Education";
 import ControlBtn from "./ControlBtn";
-import Experience from "./Experience";
+import Experience from "./experience/Experience";
 
 const ResumeBuilder = ({
   personInfo,
@@ -12,6 +12,8 @@ const ResumeBuilder = ({
   handleAddEducation,
   experienceInfo,
   handleExperienceChange,
+  handleDeleteExperience,
+  handleAddExperience,
 }) => {
   return (
     <div>
@@ -29,6 +31,8 @@ const ResumeBuilder = ({
       <Experience
         experienceInfo={experienceInfo}
         handleExperienceChange={handleExperienceChange}
+        handleDeleteExperience={handleDeleteExperience}
+        handleAddExperience={handleAddExperience}
       />
     </div>
   );
