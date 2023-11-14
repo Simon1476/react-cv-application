@@ -1,0 +1,43 @@
+
+.experience-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  
+    label {
+      text-align: left;
+    }
+
+  .dates-group {
+    display: flex;
+    gap: 1rem;
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    button {
+      border: none;
+      border-radius: 4px;
+      padding: 8px 16px;
+      
+      font-size: 18px;
+      font-weight: bold;
+
+      text-transform: uppercase;
+      
+      color: #72594D;
+
+    }
+  .button-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  }
+}
